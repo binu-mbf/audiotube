@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () { return view('index'); });   //For Homepage. 
+
+
+Route::get('/admin/login', 'AdminController@login');   //For Admin Login
+Auth::routes();
+
+
+// Route::get('/admin/dashboard', 'AdminController@dashboard'); //For Dashboard
+
+Route::get('/admin', 'AdminController@view'); 
+
+Route::get('/home', 'HomeController@index')->name('home');
